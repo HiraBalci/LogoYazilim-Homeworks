@@ -24,14 +24,14 @@ namespace First.API.Controllers
         [Route("Tester")]
         public IActionResult Test([FromForm] TesterModel model)
         {
-            var tester = new TesterModel
+            var test = new TesterModel
             {
                 FirstName = model.FirstName.ToUpper(),
                 LastName = model.LastName,
                 BirthDate = model.BirthDate,
                 Image = model.Image
             };
-            return Ok(tester);
+            return Ok(test);
         }
         [HttpDelete]
         public IActionResult Delete()

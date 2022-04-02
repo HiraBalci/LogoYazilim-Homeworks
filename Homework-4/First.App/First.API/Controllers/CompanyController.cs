@@ -83,5 +83,38 @@ namespace First.API.Controllers
                     Success = true
                 });
         }
+        [Route("DeleteCompany")]
+        [HttpPost]
+        public IActionResult Delete([FromBody] CompanyDto model)
+        {
+            companyService.DeleteCompany(new Company
+            {
+                Id = model.CompanyId,
+                Name = model.Name,
+                CreatedBy = "Hira",
+                CreatedAt = System.DateTime.Now
+            }); ;
+
+            return Ok(
+                new CompanyResponse
+                {
+                    Data = "İşleminiz Başarıyla Tamamlandı.",
+                    Success = true
+                });
+        }
+
+        [Route("UpdateCompany")]
+        [HttpPost]
+        public IActionResult Update([FromBody] Company model)
+        {
+            companyService.UpdateCompany(model);
+
+            return Ok(
+                new CompanyResponse
+                {
+                    Data = "İşleminiz Başarıyla Tamamlandı.",
+                    Success = true
+                });
+        }
     }
 }

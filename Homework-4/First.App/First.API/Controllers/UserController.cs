@@ -26,7 +26,8 @@ namespace First.API.Controllers
             {
                 "John Doe",
                 "Samet Kayıkcı",
-                "Bill Gates"
+                "Bill Gates",
+                "Hira Balcı"
             };
             return Ok(users);
         }
